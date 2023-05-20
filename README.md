@@ -21,6 +21,16 @@ Returns the Version and Last Update Date of the API
 | :-------- | :------- | :------------------------- |
 | `quote` | `string` | Returns a Quote from the API. |
 
+#### Get Song Recommendation
+
+```http
+  GET /api/recommendation
+```
+
+| Endpoint | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `recommendation` | `string` | Returns a Song Recommendation from the API. |
+
 #### Get Roast
 
 ```http
