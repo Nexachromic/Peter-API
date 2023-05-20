@@ -17,7 +17,10 @@ with open("data/facts.json", "r") as f:
 with open("data/roasts.json") as r:
     roasts = json.load(r)
 
-with open("data/darkjokes.json", "r") as g:
+with open("data/darkjokes.json", "r") as re:
+    recommendations = json.load(re)
+
+with open("data/recommendations.json", "r") as g:
     darkjokes = json.load(g)
 
 with open("data/jokes.json", "r", encoding='utf-8') as j:
@@ -53,6 +56,10 @@ def joke():
     random_joke = random.choice(jokes["jokes"])
     return jsonify({'setup': random_joke['buildup'], 'punchline': random_joke['punchline'], 'id': random_joke['id']})
 
+@app.route('/api/recommendation')
+def recommendation():
+    random_recommendation = random.choice(recommendations["recommendations"])
+    return jsonify({'song': random_recommendation['song'], 'genre': random_recommendation['genre'], 'artist': random_recommendation['artist'], 'id': random_recommendation['id']})
 
 @app.route('/api/question')
 def question():
