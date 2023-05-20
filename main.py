@@ -18,10 +18,10 @@ with open("data/roasts.json") as r:
     roasts = json.load(r)
 
 with open("data/darkjokes.json", "r") as re:
-    recommendations = json.load(re)
+    darkjokes = json.load(re)
 
 with open("data/recommendations.json", "r") as g:
-    darkjokes = json.load(g)
+    recommendations = json.load(g)
 
 with open("data/jokes.json", "r", encoding='utf-8') as j:
     jokes = json.load(j)
