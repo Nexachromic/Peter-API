@@ -26,6 +26,10 @@ with open("data/recommendations.json", "r") as g:
 with open("data/jokes.json", "r", encoding='utf-8') as j:
     jokes = json.load(j)
 
+with open("data/programjokes.json") as pj:
+    pjokes = json.load(pj)
+
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -49,12 +53,17 @@ def version():
 @app.route('/api/darkjoke')
 def darkjoke():
     random_joke = random.choice(darkjokes["jokes"])
-    return jsonify({'setup': random_joke['buildup'], 'punchline': random_joke['punchline'], 'id': random_joke['id']})
+    return jsonify({'buildup': random_joke['buildup'], 'punchline': random_joke['punchline'], 'id': random_joke['id']})
+
+@app.route('/api/devjoke')
+def devjoke():
+    random_devjoke = random.choice(pjokes["programjokes"])
+    return jsonify({'buildup': random_devjoke['setup'], 'punchline': random_devjoke['punchline'], 'id': random_devjoke['id']})
 
 @app.route('/api/joke')
 def joke():
     random_joke = random.choice(jokes["jokes"])
-    return jsonify({'setup': random_joke['buildup'], 'punchline': random_joke['punchline'], 'id': random_joke['id']})
+    return jsonify({'buildup': random_joke['buildup'], 'punchline': random_joke['punchline'], 'id': random_joke['id']})
 
 @app.route('/api/recommendation')
 def recommendation():
