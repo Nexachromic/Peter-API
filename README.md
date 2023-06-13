@@ -53,6 +53,16 @@ Required Parameters: `username`
 | :-------- | :------- | :------------------------- |
 | `joke` | `string` | Returns a Joke from the API. |
 
+#### Get Joke
+
+```http
+  GET /api/devjoke
+```
+
+| Endpoint | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `devjoke` | `string` | Returns a programming-related joke from the API. |
+
 #### Get Darkjoke
 
 ```http
