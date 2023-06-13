@@ -1,13 +1,13 @@
 import json
 
 # Open the input text file and read the jokes
-with open('data/jokes.txt', 'r', encoding='utf-8') as f:
+with open('jokes.txt', 'r', encoding='utf-8') as f:
     jokes = f.readlines()
 
 filename = input("What should be the filename? ")
 
 # Process each joke and convert it to a dictionary in JSON format
-jokes_dict = {"jokes": []}
+jokes_dict = {"programjokes": []}
 for i, joke in enumerate(jokes):
     joke = joke.strip()  # Remove any leading or trailing whitespace
     if '...' in joke:
@@ -16,7 +16,7 @@ for i, joke in enumerate(jokes):
         parts = joke.split("?", maxsplit=1)  # Split the joke into two parts, before and after the question mark
     if len(parts) != 2:
         continue  # Skip this joke if it doesn't have exactly one set of ellipses or question mark
-    jokes_dict["jokes"].append({
+    jokes_dict["programjokes"].append({
         "id": str(i + 1),
         "setup": parts[0].strip(),
         "punchline": parts[1].strip()
