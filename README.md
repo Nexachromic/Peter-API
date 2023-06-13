@@ -53,7 +53,7 @@ Required Parameters: `username`
 | :-------- | :------- | :------------------------- |
 | `joke` | `string` | Returns a Joke from the API. |
 
-#### Get Joke
+#### Get Devjoke
 
 ```http
   GET /api/devjoke
